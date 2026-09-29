@@ -1,82 +1,20 @@
-```markdown
-# 📊 Meta Ad Performance Dashboard — DAX Documentation
+You're absolutely right — those sections belong in your **README**, not a DAX reference file. Keep this file focused purely on the DAX. Here's the trimmed version:
 
-> **Report:** Meta Ad Performance Dashboard  
-> **Author:** _[Your Name]_  
-> **Last Updated:** 2026-09-29  
-> **Tool:** Microsoft Power BI (DAX)
+```markdown
+# 📊 DAX Documentation — Meta Ad Performance Dashboard
+
+> **Tool:** Microsoft Power BI (DAX)  
+> **Last Updated:** 2026-09-29
 
 ---
 
 ## 📑 Table of Contents
 
-1. [How to Use the Dashboard](#-how-to-use-the-dashboard)
-2. [Data Model Overview](#-data-model-overview)
-3. [Relationships](#-relationships)
-4. [Base Event Measures](#1--base-event-measures)
-5. [Rate Measures](#2--rate-measures)
-6. [Budget Measures](#3--budget-measures)
-7. [Dynamic Measure Selection](#4--dynamic-measure-selection-field-parameter)
-8. [Calendar Table](#5--calendar-table)
-
----
-
-## 🚀 How to Use the Dashboard
-
-This dashboard tracks and visualizes **Meta (Facebook/Instagram) ad campaign performance** across impressions, engagement, and conversions.
-
-| Step | Action |
-|------|--------|
-| 1️⃣ | Use the **Dynamic Measure slicer** to switch the visualized metric (Impressions, Engagements, Clicks, Shares, Comments, Purchases). |
-| 2️⃣ | Filter by **date** using the Calendar Table (day, week, or month level). |
-| 3️⃣ | Slice by **ad attributes** — ad type, target age group, gender, or interests. |
-| 4️⃣ | Review **rate KPIs** (CTR, Engagement Rate, Conversion Rate, Purchase Rate) to gauge efficiency. |
-| 5️⃣ | Monitor **budget cards** for total and average spend per campaign. |
-
----
-
-## 🗂 Data Model Overview
-
-The model follows a **star schema** with `ad_events` as the central fact table, supported by dimension tables and a dedicated date table.
-
-| Table | Type | Key Columns |
-|-------|------|-------------|
-| **`ad_events`** | 🟦 Fact | `ad_id`, `event_id`, `event_type`, `timestamp`, `user_id`, `Event Date`, `Event Hour`, `day_of_week`, `time_of_day` |
-| **`ads`** | 🟩 Dimension | `ad_id`, `ad_type`, `campaign_id`, `target_age_group`, `target_gender`, `target_interests` |
-| **`campaigns`** | 🟩 Dimension | `campaign_id`, `name`, `start_date`, `end_date`, `duration_days`, `total_budget` |
-| **`users`** | 🟩 Dimension | _user attributes_ |
-| **`Calender Table`** | 📅 Date | `Date`, `Day`, `day_num`, `month`, `Week Day`, `Week Number` |
-| **`Select Dynamic Measure`** | ⚙️ Field Parameter | `Select Dynamic Measure`, `…Fields`, `…Order`, `Dynamic Title` |
-
----
-
-## 🔗 Relationships
-
-```text
-                    ┌───────────────────┐
-                    │   Calender Table  │
-                    │      [Date]       │
-                    └─────────┬─────────┘
-                              │ 1 : *
-                              ▼
-   ┌────────────┐        ┌──────────────┐        ┌──────────────┐
-   │   users    │  * : 1 │  ad_events   │ * : 1  │     ads      │
-   │ [user_id]  │───────▶│  (FACT)      │◀───────│  [ad_id]     │
-   └────────────┘        │              │        └──────┬───────┘
-                         └──────────────┘               │ * : 1
-                                                         ▼
-                                                 ┌──────────────┐
-                                                 │  campaigns   │
-                                                 │[campaign_id] │
-                                                 └──────────────┘
-```
-
-| From (Many) | To (One) | Cardinality | Direction |
-|-------------|----------|-------------|-----------|
-| `ad_events[Event Date]` | `Calender Table[Date]` | \* : 1 | Single |
-| `ad_events[user_id]` | `users[user_id]` | \* : 1 | Single |
-| `ad_events[ad_id]` | `ads[ad_id]` | \* : 1 | Single |
-| `ads[campaign_id]` | `campaigns[campaign_id]` | \* : 1 | Single |
+1. [Base Event Measures](#1--base-event-measures)
+2. [Rate Measures](#2--rate-measures)
+3. [Budget Measures](#3--budget-measures)
+4. [Dynamic Measure Selection](#4--dynamic-measure-selection-field-parameter)
+5. [Calendar Table](#5--calendar-table)
 
 ---
 
@@ -285,8 +223,9 @@ WEEKNUM ( 'Calender Table'[Date], 2 )
 
 <div align="center">
 
-**End of Documentation**  
-_Meta Ad Performance Dashboard · Built with Power BI & DAX_
+**End of DAX Documentation**
 
 </div>
 ```
+
+Yes — put the **project overview, how-to-use, data model, and relationships diagram** in your `README.md`. That way the README tells the story of the whole project, and this file stays a clean, focused DAX reference. Good instinct. 👍
