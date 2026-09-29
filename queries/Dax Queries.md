@@ -1,7 +1,6 @@
 # 📊 DAX Documentation — Meta Ad Performance Dashboard
 
 > **Tool:** Microsoft Power BI (DAX)  
-> **Last Updated:** 2026-09-29
 
 ---
 
@@ -223,6 +222,3 @@ WEEKNUM ( 'Calender Table'[Date], 2 )
 **End of DAX Documentation**
 
 </div>
-```
-
-Now the anchors are clean single-hyphen (`#1-base-event-measures`) and will jump reliably on **GitHub, VS Code, and most other viewers**.
