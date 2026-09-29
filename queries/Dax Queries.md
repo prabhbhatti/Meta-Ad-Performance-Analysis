@@ -1,8 +1,3 @@
-Your TOC links are actually **already correct for GitHub** — the double hyphens (`--`) come from the space + emoji in each heading, which is exactly how GitHub builds the anchors. So they should jump fine when viewed on GitHub.
-
-If they're *not* jumping, it's because your viewer (e.g. VS Code preview) handles emoji anchors differently. The bulletproof fix that works **everywhere** is to remove emojis from the section headings so the anchors are clean and predictable. Here's the full file with that fix applied:
-
-```markdown
 # 📊 DAX Documentation — Meta Ad Performance Dashboard
 
 > **Tool:** Microsoft Power BI (DAX)  
