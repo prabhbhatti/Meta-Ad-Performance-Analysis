@@ -2,18 +2,26 @@
 
 > **📈 [Read the Full Report Here](Meta%20Ad%20Performance%20Report.md)** ← Start here!
 
-An analysis of Meta (Facebook/Instagram) ad campaign performance using Power BI & DAX.
+A comparative analysis of **Facebook vs Instagram** ad performance using Power BI & DAX,
+featuring a dynamic measure selector to explore six key metrics on demand.
 
 ## Quick Results
-| Total Impressions | Total Clicks | Conversions | Click-Through Rate |
-|-------------------|--------------|-------------|--------------------|
-| [X,XXX,XXX] | [XXX,XXX] | [XX,XXX] | [X.X%] |
+| Platform | Impressions | Clicks | Purchases | Conversion Rate |
+|----------|-------------|--------|-----------|-----------------|
+| Facebook | 216.0K | 25.4K | 1.3K | 5.21% |
+| Instagram | 123.8K | 14.7K | 708 | 4.82% |
+
+## 🎛️ Dynamic Measure
+All charts respond to a **field parameter** — switch any visual between:
+`Impressions` · `Engagements` · `Clicks` · `Shares` · `Comments` · `Purchases`
 
 ## 📸 Dashboard Preview
-![Dashboard](../visuals/01_Meta%20Ad%20Dashboard/Overall%20Dashboard.png)
+| Facebook | Instagram |
+|----------|-----------|
+| ![Facebook Dashboard](../visuals/01_Facebook%20Dashboard/Facebook%20Dashboard.png) | ![Instagram Dashboard](../visuals/02_Instagram%20Dashboard/Instagram%20Dashboard.png) |
 
 ## 📁 Repository Structure
 - `data/` — raw datasets (ad events, ads, campaigns, users)
 - `queries/` — DAX measures for all KPIs
 - `reports/` — full analysis report
-- `visuals/` — charts & dashboard
+- `visuals/` — charts & dashboards
