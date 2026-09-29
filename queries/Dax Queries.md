@@ -1,4 +1,6 @@
-You're absolutely right — those sections belong in your **README**, not a DAX reference file. Keep this file focused purely on the DAX. Here's the trimmed version:
+Your TOC links are actually **already correct for GitHub** — the double hyphens (`--`) come from the space + emoji in each heading, which is exactly how GitHub builds the anchors. So they should jump fine when viewed on GitHub.
+
+If they're *not* jumping, it's because your viewer (e.g. VS Code preview) handles emoji anchors differently. The bulletproof fix that works **everywhere** is to remove emojis from the section headings so the anchors are clean and predictable. Here's the full file with that fix applied:
 
 ```markdown
 # 📊 DAX Documentation — Meta Ad Performance Dashboard
@@ -10,15 +12,15 @@ You're absolutely right — those sections belong in your **README**, not a DAX 
 
 ## 📑 Table of Contents
 
-1. [Base Event Measures](#1--base-event-measures)
-2. [Rate Measures](#2--rate-measures)
-3. [Budget Measures](#3--budget-measures)
-4. [Dynamic Measure Selection](#4--dynamic-measure-selection-field-parameter)
-5. [Calendar Table](#5--calendar-table)
+1. [Base Event Measures](#1-base-event-measures)
+2. [Rate Measures](#2-rate-measures)
+3. [Budget Measures](#3-budget-measures)
+4. [Dynamic Measure Selection](#4-dynamic-measure-selection-field-parameter)
+5. [Calendar Table](#5-calendar-table)
 
 ---
 
-## 1. 🎯 Base Event Measures
+## 1. Base Event Measures
 
 > **Home Table:** `ad_events` &nbsp;•&nbsp; **Format:** Decimal Number
 
@@ -65,7 +67,7 @@ Engagements =
 
 ---
 
-## 2. 📈 Rate Measures
+## 2. Rate Measures
 
 > **Home Table:** `ad_events`
 
@@ -100,7 +102,7 @@ DIVIDE ( [Purchases], [Impressions], 0 )
 
 ---
 
-## 3. 💰 Budget Measures
+## 3. Budget Measures
 
 > **Home Table:** `ad_events` &nbsp;•&nbsp; **Format:** Currency (1 decimal place)
 
@@ -121,7 +123,7 @@ AVERAGE ( campaigns[total_budget] )
 
 ---
 
-## 4. ⚙️ Dynamic Measure Selection (Field Parameter)
+## 4. Dynamic Measure Selection (Field Parameter)
 
 > **Created via:** Modeling → New Parameter → Fields &nbsp;•&nbsp; **Storage Mode:** Import
 
@@ -166,7 +168,7 @@ IF ( 'Select Dynamic Measure'[Select Dynamic Measure Order] = 5, "Purchases",
 
 ---
 
-## 5. 📅 Calendar Table
+## 5. Calendar Table
 
 > **Type:** Date Table (marked via *Mark as Date Table*)  
 > **Relationship:** `Calender Table[Date]` → `ad_events[Event Date]`
@@ -228,4 +230,4 @@ WEEKNUM ( 'Calender Table'[Date], 2 )
 </div>
 ```
 
-Yes — put the **project overview, how-to-use, data model, and relationships diagram** in your `README.md`. That way the README tells the story of the whole project, and this file stays a clean, focused DAX reference. Good instinct. 👍
+Now the anchors are clean single-hyphen (`#1-base-event-measures`) and will jump reliably on **GitHub, VS Code, and most other viewers**.
