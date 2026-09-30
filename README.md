@@ -54,29 +54,31 @@ You can find the full write up in the reports folder.
 ---
 
 ## 📁 Repository Structure
+
+```
 ├── data/
-│ ├── ad_events.csv # Every ad interaction record
-│ ├── ads.csv # Ad level details
-│ ├── campaigns.csv # Campaign level details
-│ └── users.csv # User info for audience analysis
+│   ├── ad_events.csv                  # Every ad interaction record
+│   ├── ads.csv                        # Ad level details
+│   ├── campaigns.csv                  # Campaign level details
+│   └── users.csv                      # User info for audience analysis
 │
 ├── docs/
-│ └── README.md # Extra project documentation
+│   └── README.md                      # Extra project documentation
 │
 ├── queries/
-│ └── Dax Queries.md # All DAX measures with explanations
+│   └── Dax Queries.md                 # All DAX measures with explanations
 │
 ├── reports/
-│ ├── Metadata Summary Report.md # Full analysis, insights & recommendations
-│ └── README.md
+│   ├── Metadata Summary Report.md     # Full analysis, insights & recommendations
+│   └── README.md
 │
 ├── visuals/
-│ ├── 01_Facebook/ # Facebook charts + dashboard
-│ ├── 02_Instagram/ # Instagram charts + dashboard
-│ ├── 03_Data Model View/ # The star schema data model
+│   ├── 01_Facebook/                   # Facebook charts + dashboard
+│   ├── 02_Instagram/                  # Instagram charts + dashboard
+│   └── 03_Data Model View/            # The star schema data model
 │
-└── README.md # You are here
-
+└── README.md                          # You are here
+```
 ---
 
 ## 📊 Sample Visuals
