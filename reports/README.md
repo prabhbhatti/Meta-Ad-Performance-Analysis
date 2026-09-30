@@ -18,10 +18,11 @@ All charts respond to a **field parameter** — switch any visual between:
 ## 📸 Dashboard Preview
 | Facebook | Instagram |
 |----------|-----------|
-| ![Facebook Dashboard](../visuals/01_Facebook%20Dashboard/Facebook%20Dashboard.png) | ![Instagram Dashboard](../visuals/02_Instagram%20Dashboard/Instagram%20Dashboard.png) |
+| ![Facebook Dashboard](../visuals/01_Facebook/Overall%20Dashboard/Facebook%20Dashboard.png) | ![Instagram Dashboard](../visuals/02_Instagram/Overall%20Dashboard/Instagram%20Dashboard.png) |
 
 ## 📁 Repository Structure
 - `data/` — raw datasets (ad events, ads, campaigns, users)
 - `queries/` — DAX measures for all KPIs
 - `reports/` — full analysis report
 - `visuals/` — charts & dashboards
+
