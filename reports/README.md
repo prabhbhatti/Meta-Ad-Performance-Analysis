@@ -1,6 +1,6 @@
 # 📊 Meta Ad Performance Analysis
 
-> **📈 [Read the Full Report Here](Meta%20Ad%20Performance%20Report.md)** ← Start here!
+> **📈 [Read the Full Report Here](Metadata%20Summary%20Report.md)** ← Start here!
 
 A comparative analysis of **Facebook vs Instagram** ad performance using Power BI & DAX,
 featuring a dynamic measure selector to explore six key metrics on demand.
