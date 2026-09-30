@@ -2,15 +2,15 @@
 
 **Name:** Bhatti Prabhpreet Singh
 **Tools:** Power BI (data modeling & dashboards), DAX (KPIs & field parameters)
-**Dataset:** `ad_events`, `ads`, `campaigns`, `users` — ad event records across Facebook & Instagram
+**Dataset:** ad_events, ads, campaigns, users. Ad event records across Facebook & Instagram.
 
 ---
 
 ## 1. Executive Summary
 
-This project analyzes and compares ad performance across **Facebook and Instagram** to understand which platform delivers stronger reach, engagement, and conversions. Two dedicated dashboards were built in Power BI, each powered by a **dynamic measure selector** that lets users view every chart through six different metrics — Impressions, Engagements, Clicks, Shares, Comments, and Purchases.
+This project looks at how ads performed on Facebook compared to Instagram, so we can see which platform gives better reach, engagement, and sales. I built two dashboards in Power BI, one for each platform, and both use a measure selector that lets you view any chart by six different metrics: Impressions, Engagements, Clicks, Shares, Comments, and Purchases.
 
-The headline story is clear: **Facebook is the stronger performer on both volume and efficiency.** It delivers roughly 1.7x the impressions of Instagram *and* converts them at a higher rate (5.21% vs 4.82%). This challenges the common assumption that one platform is purely for awareness and the other for conversion — here, Facebook leads across the funnel.
+The main takeaway is simple. Facebook is the better performer. It reaches almost twice as many people as Instagram and it also turns those people into buyers at a slightly higher rate. So it wins on both size and quality, which is not always what people expect.
 
 **Headline results:**
 
@@ -31,20 +31,19 @@ The headline story is clear: **Facebook is the stronger performer on both volume
 
 ## 2. Objectives
 
-1. Which platform — Facebook or Instagram — performs better overall?
-2. How do the two platforms compare across each metric (reach vs engagement vs conversions)?
-3. Which ad types (Carousel, Image, Stories, Video) drive the best results on each platform?
-4. How efficiently does each platform convert impressions into purchases?
-5. Which audiences (gender & age) should the budget target?
+1. Which platform performs better overall, Facebook or Instagram?
+2. How do the two platforms compare on reach, engagement, and sales?
+3. Which ad types (Carousel, Image, Stories, Video) work best on each platform?
+4. How well does each platform turn views into actual purchases?
+5. Which age groups and genders should we spend the budget on?
 
 ---
 
 ## 3. Methodology
 
-- **Data modeling:** Built a star schema in Power BI linking `ad_events` (fact) to `ads`, `campaigns`, and `users` dimension tables, with a calendar table for time intelligence.
-- **KPI calculation:** Wrote DAX measures for all six base metrics plus derived rates (CTR, Engagement Rate, Conversion Rate, Purchase Rate).
-- **Dynamic measure:** Created a **field parameter** so every chart (Gender, Age, Country, Weekly & Hourly trends) can be re-pivoted to any of the six metrics without rebuilding the visual — enabling flexible, self-serve exploration.
-- **Platform split:** Built two parallel dashboards (Facebook & Instagram) with identical layouts for clean side-by-side comparison.
+I built a star schema in Power BI that connects the ad_events table to the ads, campaigns, and users tables, plus a calendar table for date based analysis. I wrote DAX measures for all six main metrics and for the rate calculations like CTR, Engagement Rate, Conversion Rate, and Purchase Rate.
+
+I also created a field parameter so every chart can be switched to show any of the six metrics without building a new visual each time. Finally, I made two matching dashboards, one for Facebook and one for Instagram, so they are easy to compare side by side.
 
 ---
 
@@ -57,11 +56,11 @@ The headline story is clear: **Facebook is the stronger performer on both volume
 | Impressions | 216.0K | 123.8K | Facebook |
 | Engagements | 29.3K | 16.8K | Facebook |
 | Engagement Rate | 14% | 14% | Tie |
-| Click-Through Rate | 11.76% | 11.86% | Instagram (marginal) |
+| Click-Through Rate | 11.76% | 11.86% | Instagram (just barely) |
 | Conversion Rate | 5.21% | 4.82% | Facebook |
 | Purchases | 1.3K | 708 | Facebook |
 
-> **Insight:** Facebook dominates on raw volume, generating **~74% more impressions** and nearly **double the purchases** of Instagram. Crucially, it also converts *more efficiently* — a 5.21% conversion rate vs Instagram's 4.82%. The two platforms are near-identical on the middle-funnel rates (CTR ~11.8%, Engagement Rate 14% on both), meaning users interact at the same rate once reached — but Facebook simply reaches more people and turns them into buyers more effectively. Instagram edges CTR by a hair (11.86% vs 11.76%), its only win.
+**What this means:** Facebook is clearly ahead. It got about 74% more views than Instagram and made nearly double the purchases. The two platforms are basically tied on the in between steps, since both have a 14% engagement rate and almost the same click through rate. So people react the same way once they see an ad. The difference is that Facebook simply shows ads to more people and is a bit better at turning them into buyers. Instagram only wins on click through rate, and even then by a tiny amount.
 
 ### 4.2 Facebook — Performance by Ad Type
 
@@ -72,7 +71,7 @@ The headline story is clear: **Facebook is the stronger performer on both volume
 | Carousel | 12.8K | 1.6K | 12.33% | 14% | 4.70% | 0.58% |
 | Image | 13.7K | 1.6K | 11.88% | 14% | **3.74%** | **0.44%** |
 
-> **Insight:** **Stories is Facebook's standout format** — it earns the most impressions (19.1K), the most clicks (2.3K), *and* the highest conversion rate (5.91%) and purchase rate (0.70%). It's the rare format that wins on both volume and efficiency. **Image is the clear weak link**: despite the second-highest impressions (13.7K), it converts at just 3.74% — the lowest of any format — and has the lowest purchase rate (0.44%). Interestingly, Carousel earns the best CTR (12.33%) but a below-average conversion rate, showing it attracts clicks that don't translate into sales.
+**What this means:** Stories is the best format on Facebook by a clear margin. It gets the most views, the most clicks, and the highest conversion rate. That is rare, because usually a format is good at one thing but not both. Image ads are the weak spot. They get plenty of views but the fewest sales, so the money spent on them is not working very hard. One thing to watch is Carousel, which gets the most clicks but not many sales, meaning people click but do not buy.
 
 ### 4.3 Instagram — Performance by Ad Type
 
@@ -83,19 +82,19 @@ The headline story is clear: **Facebook is the stronger performer on both volume
 | Image | 10.0K | 1.3K | 12.49% | 14% | 4.23% | 0.53% |
 | Video | 2.7K | 0.3K | **12.63%** | 14% | 4.34% | 0.55% |
 
-> **Insight:** On Instagram the picture flips — **Carousel is the top converter (5.35%)**, narrowly ahead of Stories (5.28%). **Video is dramatically underused**: at just 2.7K impressions it has by far the smallest reach, yet it posts the **highest CTR of any format on either platform (12.63%)**. That's a strong signal that Instagram Video is being under-invested — it earns clicks efficiently but simply isn't being served enough. Image, as on Facebook, is a laggard for conversions (4.23%).
+**What this means:** On Instagram the winner is different. Carousel brings the most sales, with Stories close behind. The most interesting point is Video. It barely gets shown (only 2.7K views), but it has the highest click through rate on either platform. That tells me Instagram Video is being ignored even though it clearly gets people to click, so it deserves more budget. Just like on Facebook, Image is the weakest format for sales.
 
-> **Cross-platform takeaway:** Stories converts well on *both* platforms (5.91% FB / 5.28% IG), making it the safest high-performing format across the board. Image consistently underperforms on both and is the prime candidate for creative overhaul or reduced spend.
+**Quick tip across both platforms:** Stories does well on both, so it is a safe bet everywhere. Image is the worst for sales on both, so it needs new creative or less spending.
 
 ### 4.4 Engagement Breakdown (Clicks vs Shares vs Comments)
 
-| Engagement Type | Facebook | Instagram | FB Advantage |
-|-----------------|----------|-----------|--------------|
-| Clicks | 25.4K | 14.7K | +73% |
-| Comments | 2.6K | 1.5K | +73% |
-| Shares | 1.3K | 682 | +91% |
+| Engagement Type | Facebook | Instagram | Facebook is higher by |
+|-----------------|----------|-----------|-----------------------|
+| Clicks | 25.4K | 14.7K | 73% |
+| Comments | 2.6K | 1.5K | 73% |
+| Shares | 1.3K | 682 | 91% |
 
-> **Insight:** Facebook leads every engagement type, but the gap is widest on **Shares (+91%)** — content on Facebook gets amplified far more relative to its reach than on Instagram. Comments and Clicks both scale at ~+73%, closely mirroring the impression gap, which means those interactions are proportional to reach. Shares are the exception, pointing to Facebook's stronger viral/sharing behaviour among its audience.
+**What this means:** Facebook beats Instagram on every type of engagement. The biggest gap is in shares, where Facebook is 91% higher. That means Facebook content gets passed around more. Clicks and comments are both about 73% higher, which matches the gap in views, so those are just following the reach. Shares are the standout, which shows Facebook users are more likely to spread content to others.
 
 ### 4.5 Conversion Funnel by Platform
 
@@ -104,41 +103,41 @@ The headline story is clear: **Facebook is the stronger performer on both volume
 | Impressions | 216.0K | 123.8K |
 | Clicks | 25.4K | 14.7K |
 | Purchases | 1.3K | 708 |
-| Impression → Click (CTR) | 11.76% | 11.86% |
-| Click → Purchase (Conv. Rate) | 5.21% | 4.82% |
-| Impression → Purchase (Purchase Rate) | 0.61% | 0.57% |
+| View to Click (CTR) | 11.76% | 11.86% |
+| Click to Purchase (Conv. Rate) | 5.21% | 4.82% |
+| View to Purchase (Purchase Rate) | 0.61% | 0.57% |
 
-> **Insight:** Both platforms lose the vast majority of users at the **impression → click** stage (only ~11.8% click through on each), so this is the universal bottleneck. The platforms *separate* at the **click → purchase** step, where Facebook retains 5.21% vs Instagram's 4.82%. In other words, both attract clicks at the same rate, but Facebook is better at turning those clicks into buyers — the single biggest reason its end-to-end purchase rate (0.61%) beats Instagram's (0.57%).
+**What this means:** On both platforms, most people drop off right after seeing the ad. Only about 12% actually click, so that first step is where we lose the most people. After the click, Facebook does a better job of getting the sale (5.21% vs 4.82%). So the real reason Facebook ends up with more purchases is that it is better at closing the deal once someone clicks.
 
 ### 4.6 Audience Insights — Gender & Age
 
-**Gender split (consistent across all six metrics):**
+**Gender split (stays about the same across all metrics):**
 
 | Segment | Facebook | Instagram |
 |---------|----------|-----------|
-| Female | ~43% | ~35–37% |
-| All / Untargeted | ~35% | ~36–38% |
-| Male | ~21% | ~26–28% |
+| Female | about 43% | about 35 to 37% |
+| Untargeted (All) | about 35% | about 36 to 38% |
+| Male | about 21% | about 26 to 28% |
 
-**Age:** On both platforms, performance peaks in the **early-to-mid 20s** and declines steadily after age 30 — a distinctly young-skewed audience. Facebook's peak sits slightly later (~mid-20s) while Instagram skews a touch younger (~early 20s).
+**Age:** On both platforms the best results come from people in their early to mid twenties, and it drops off after age 30. So the audience is young. Facebook peaks a little later (mid twenties) and Instagram a little earlier (early twenties).
 
-> **Insight:** Facebook's audience is **notably more female (43%)** and its purchases skew female-heavy (572 female vs 279 male). Instagram is **more gender-balanced**, with a larger male share (26–28%) across every metric. This is a real targeting lever: female-focused creative will resonate more on Facebook, while Instagram supports a broader, more balanced gender strategy. Both platforms should concentrate spend on the **18–30 age band**, which drives the clear majority of every metric.
+**What this means:** Facebook's audience is more female, and most of its purchases come from women. Instagram is more balanced between men and women, with a bigger male share. So for Facebook it makes sense to lead with content aimed at women, while Instagram can go broader. Either way, both platforms should focus the budget on the 18 to 30 age group, since that is where almost all the activity happens.
 
 ---
 
 ## 5. Recommendations
 
-1. **Prioritize Facebook for scale and conversion.** It out-delivers Instagram on both reach (+74% impressions) and efficiency (5.21% vs 4.82% conversion) — it should carry the larger share of budget.
-2. **Double down on Stories.** It's a top-3 converter on both platforms and Facebook's single best format (5.91% conversion). Shift budget toward Stories placements.
-3. **Fix or cut Image ads.** Image is the weakest converter on both platforms (3.74% FB / 4.23% IG). Refresh the creative/CTA or reallocate that spend to Stories and Carousel.
-4. **Scale up Instagram Video.** It has the highest CTR anywhere (12.63%) but the lowest reach (2.7K) — it's being starved. Increase Video investment on Instagram to capture that efficient click behaviour.
-5. **Attack the top-funnel bottleneck.** Only ~11.8% of impressions convert to clicks on both platforms. Stronger hooks, creative, and targeting at this stage would lift the entire funnel.
-6. **Target by platform demographics.** Lead with female-focused creative and the 18–30 age band on Facebook; use a more gender-balanced approach on Instagram where the male share is meaningfully higher.
+1. **Put more budget on Facebook.** It reaches more people and sells better, so it should get the bigger share of spend.
+2. **Lean into Stories.** It is a top performer on both platforms and the single best format on Facebook, so shift more spend toward it.
+3. **Fix or drop Image ads.** They are the worst for sales on both platforms. Either give them fresh creative or move that money to Stories and Carousel.
+4. **Give Instagram Video a real chance.** It gets the best click rate anywhere but is barely being used, so it is worth testing with more budget.
+5. **Work on the first step of the funnel.** Only about 12% of people click after seeing an ad, so better hooks and targeting here would lift everything else.
+6. **Match the audience to the platform.** Lead with female focused content on Facebook, keep it balanced on Instagram, and focus on the 18 to 30 age group on both.
 
 ---
 
 ## 6. Conclusion
 
-Across the two platforms, the campaigns generated **216.0K Facebook impressions** and **123.8K Instagram impressions**, driving **1.3K and 708 purchases** respectively. Facebook is the stronger performer on nearly every dimension — more reach, more engagement, more purchases, and a higher conversion rate — while Instagram's only edge is a marginally better click-through rate and a Video format that punches above its weight.
+Overall, the campaigns brought in 216.0K views on Facebook and 123.8K on Instagram, leading to 1.3K and 708 purchases. Facebook came out ahead on almost everything: more reach, more engagement, more sales, and a better conversion rate. Instagram's only wins were a slightly better click rate and a Video format that performs well but is hardly being used.
 
-The clearest growth levers are: shifting budget toward Facebook and toward Stories placements, fixing underperforming Image creative, scaling Instagram's efficient-but-underused Video, and tightening top-of-funnel targeting around the young, Facebook-female-leaning audience that drives the results. The dynamic measure dashboards make it easy to monitor all six metrics through a single, flexible view.
+The clearest ways to grow are to spend more on Facebook and on Stories, fix the weak Image ads, test Instagram Video properly, and improve the first step of the funnel where most people drop off. The dashboards with the measure selector make it easy to keep an eye on all six metrics in one place.
