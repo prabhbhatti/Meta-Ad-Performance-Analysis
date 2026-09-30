@@ -1,70 +1,87 @@
-# Data Project Documentation Template
+# 📊 Meta Ad Performance Analysis (Facebook vs Instagram)
 
-A production-ready GitHub template for documenting data analysis, SQL, dashboard, pipeline, and machine learning projects - with built-in examples, narrative guidance, and adaptable structure.
+Hi, and welcome to my project! 👋
 
-## What This Is
+This is an end to end data analytics project where I looked at how ad campaigns performed on **Facebook** compared to **Instagram**. The goal was to figure out which platform gives better results and where the marketing budget should actually go. I built the whole thing in **Power BI** using **DAX**, and I put together two interactive dashboards that make it easy to compare both platforms side by side.
 
-This is a **cloneable template repository** designed to help data analysts, scientists, and engineers document their projects the way senior practitioners do - with clarity, structure, and storytelling.
+---
 
-Every section includes:
-- Plain-language instructions on what to write
-- Examples of strong vs. weak documentation  
-- Guidance on when to keep or delete a section
+## 🎯 What This Project Answers
 
-It works for **any kind of data project:**
-- SQL analysis
-- Python / R exploratory analysis
-- Dashboards (Tableau, Power BI, Looker)
-- Data pipelines / ETL workflows
-- Machine learning / predictive modeling
-- Mixed-method projects
+I set out to answer a few simple but important business questions:
 
-## Why This Exists
+1. Which platform performs better overall, Facebook or Instagram?
+2. How do the two compare on reach, engagement, and actual sales?
+3. Which ad types (Carousel, Image, Stories, Video) work best on each platform?
+4. How good is each platform at turning views into purchases?
+5. Which age groups and genders should the budget focus on?
 
-After hundreds of portfolio reviews, the pattern was clear: **the projects that stand out aren't always the most technically sophisticated - they're the ones where the README tells a clear story.**
+---
 
-Most data professionals never learn how to document their work. This template fixes that.
+## 🧠 The Short Version (Key Findings)
 
-## How to Use It
+If you only read one thing, read this:
 
-1. Click **"Use this template"** (green button at the top)
-2. Name your new repo after your actual project
-3. Copy the contents of `README_TEMPLATE.md` into your new project's README
-4. Delete folders and sections you don't need
-5. Remove all placeholder text and comments before publishing
+**Facebook is the stronger platform.** It reached almost twice as many people as Instagram and made nearly double the sales. Both platforms get people to react in a similar way once they see an ad, but Facebook simply reaches more people and is a bit better at closing the sale.
 
-Full walkthrough: [HOW_TO_USE.md](HOW_TO_USE.md)
+A few other things I found:
 
-## What's Inside
+* **Stories** was the best ad format on both platforms, so it is a safe bet.
+* **Image ads** were the weakest for sales on both platforms and need fresh ideas.
+* **Instagram Video** barely gets shown but has the best click rate anywhere, so it is being wasted.
+* The audience skews young on both platforms, mostly people between **18 and 30**.
 
-The template includes:
-- **README_TEMPLATE.md** - The fill-in-the-blank documentation template
-- **project_metadata.yml** - Optional machine-readable metadata
-- **Complete folder structure** - Pre-built folders for data, notebooks, scripts, queries, reports, visuals, and docs
-- **.gitignore** - Pre-configured to exclude data files
+You can find the full write up in the reports folder.
 
-## Who This Is For
+---
 
-- **Beginners** building their first portfolio project
-- **Early-career analysts** cleaning up existing projects
-- **Career switchers** who have technical skills but need to frame their work
-- **Experienced practitioners** who want a consistent structure
+## 🛠️ Tools & Skills Used
 
-## Features
+* **Power BI** for building the data model and dashboards
+* **DAX** for all the KPIs and calculations (CTR, Engagement Rate, Conversion Rate, Purchase Rate)
+* **Data modeling** using a star schema to connect the tables
+* **Field parameters** so every chart can switch between six metrics without extra visuals
 
-✅ Section-by-section guidance with examples  
-✅ Supports SQL, Python, R, dashboards, pipelines, ML  
-✅ Includes ERD section for SQL projects  
-✅ Pre-built .gitignore for data projects  
-✅ Optional YAML metadata for portfolio automation  
-✅ Delete-what-you-don't-use philosophy  
+---
 
-## License
+## 📁 What's Inside This Repo
 
-MIT License - use this however you want.
+| Folder | What's in it |
+|--------|--------------|
+| `data/` | The raw CSV files (ad_events, ads, campaigns, users) |
+| `docs/` | Extra documentation about the project |
+| `queries/` | All the DAX measures I wrote, with explanations |
+| `reports/` | The full summary report with insights and recommendations |
+| `visuals/` | Dashboard screenshots and charts for each metric and platform |
 
-## Credits
+---
 
-Created by **Issy BI**
+## 📸 Dashboard Preview
 
-If this helped you, consider starring the repo or sharing it with someone building their data portfolio.
+### Facebook Dashboard
+![Facebook Dashboard](visuals/01_Facebook/Overall%20Dashboard/Facebook%20Dashboard.png)
+
+### Instagram Dashboard
+![Instagram Dashboard](visuals/02_Instagram/Overall%20Dashboard/Instagram%20Dashboard.png)
+
+### Data Model
+![Data Model View](visuals/03_Data%20Model%20View/Data%20Model%20View.png)
+
+---
+
+## 🔍 How to Explore This Project
+
+1. Start here with this README to get the big picture.
+2. Open the **reports** folder to read the full analysis and recommendations.
+3. Check the **visuals** folder to see the dashboards and charts for each metric.
+4. Look at the **queries** folder if you want to see the DAX behind the numbers.
+
+---
+
+## 💡 What I Took Away From This
+
+This project gave me a chance to work through a real business problem from start to finish, from raw data all the way to a clear set of recommendations someone could actually act on. It pushed my skills in data modeling, DAX, and turning numbers into a story that makes sense.
+
+Thanks for taking the time to look through it. Feel free to reach out if you have any questions!
+
+**Bhatti Prabhpreet Singh**
